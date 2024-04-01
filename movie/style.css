@@ -305,7 +305,13 @@
 }
 
 /* Adjust carousel padding and overflow for smaller screens */
+/* Adjust carousel padding and overflow for smaller screens */
 @media screen and (max-width: 767px) {
+  .carousel {
+    min-width: auto; /* Remove minimum width */
+    width: calc(100% - 60px); /* Adjust width for smaller screens */
+  }
+  
   .screen {
     padding: 20px 0; /* Adjust padding for smaller screens */
     overflow-x: auto; /* Enable horizontal scrolling for small screens */
