@@ -279,3 +279,38 @@
   font-size: 56px;
   width: 100%;
 }
+/* Default styles for the carousel */
+/* Default styles for the carousel */
+.screen {
+  overflow: hidden; /* Hide overflow content */
+  margin-left: -16px;
+  margin-right: -16px;
+  padding: 40px 0;
+  white-space: nowrap; /* Ensure items stay in a single line */
+}
+
+.track {
+  font-size: 0;
+  transition: all 0.75s ease 0s;
+  white-space: nowrap; /* Ensure items stay in a single line */
+  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+}
+
+.item {
+  display: inline-flex;
+  vertical-align: top;
+  white-space: normal;
+  transition: 250ms all;
+  padding: 0 4px;
+}
+
+/* Adjust carousel padding and overflow for smaller screens */
+@media screen and (max-width: 767px) {
+  .screen {
+    padding: 20px 0; /* Adjust padding for smaller screens */
+    overflow-x: auto; /* Enable horizontal scrolling for small screens */
+    white-space: nowrap; /* Ensure items stay in a single line */
+    -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+  }
+}
+
