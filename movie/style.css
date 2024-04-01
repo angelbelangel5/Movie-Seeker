@@ -67,8 +67,22 @@
         gap: 20px;
     }
   
-
+    .movie::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0); /* Initial color (transparent) */
+      transition: background-color 0.3s ease; /* Transition for color change */
+      z-index: 1; /* Ensure overlay is above movie image */
+    }
+    .movie:hover::before {
+      background-color: rgba(69, 30, 240, 0.5); 
+    }
     .movie {
+      position: relative;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -77,7 +91,8 @@
 }
 
 .movie:hover {
-    transform: translateY(-5px);
+    
+    transform: scale(1.05);
 }
     .movie img {
         width: 100%;
@@ -318,5 +333,19 @@
     white-space: nowrap; /* Ensure items stay in a single line */
     -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
   }
+}
+/* Define keyframes for carousel animation */
+@keyframes moveCarousel {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Apply animation to the carousel track */
+.track {
+  animation: moveCarousel 10s infinite alternate; 
 }
 
